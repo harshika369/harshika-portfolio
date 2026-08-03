@@ -1,1 +1,53 @@
+/* ===== Portfolio Theme ===== */
 
+/* ===================================
+   PORTFOLIO COLOR PALETTE
+=================================== */
+
+:root {
+    --bg-color: #0F172A;
+    --primary-color: #F97316;
+    --accent-color: #84CC16;
+    --text-color: #F8FAFC;
+    --secondary-text: #CBD5E1;
+}
+
+/* ===================================
+   GLOBAL STYLES
+=================================== */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* ===================================
+   LAYOUT
+=================================== */
+
+header {
+    padding: 80px 0 40px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+
+header p {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}

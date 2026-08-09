@@ -29,7 +29,7 @@ body {
 
 header {
 
-    min-height: 85vh;
+    min-height: 80vh;
 
     display: flex;
     align-items: center;
@@ -73,7 +73,7 @@ header p {
 }
 
 .hero-title{
-    font-size: 4.5rem;
+    font-size: 4rem;
     font-weight: 800;
     line-height: 1.1;
     margin: 0;
@@ -102,30 +102,91 @@ header p {
     margin: auto;
 }
 
-.hero-waves {
-    position: absolute;
 
-    width: 840px;
-    height: 260px;
+/* ===================================
+ABOUT SECTION
+=================================== */
 
-    right: -260px;
-    bottom: 160px;
-
-    border: 1px solid rgba(132, 204, 22, 0.08);
-    border-radius: 50%;
-
-    transform: rotate(-12deg);
-
-    pointer-events: none;
+#about {
+    padding: 45px 0 70px;
 }
 
-.hero-content {
+#about h2 {
+    font-size: 2.4rem;
+    margin: 0 0 28px;
+    color: var(--text-color);
     position: relative;
-    z-index: 2;
 }
 
-.hero-waves {
-    z-index: 1;
+#about h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 12px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+#about p {
+    max-width: 900px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--secondary-text);
+    margin: 0 0 22px;
+}
+
+#about .about-intro {
+    font-size: 1.15rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+#about .highlight {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: top;
+
+    width: calc(50% - 14px);
+    min-height: 95px;
+    box-sizing: border-box;
+
+    margin-top: 12px;
+    margin-right: 20px;
+    padding: 20px 22px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(132, 204, 22, 0.18);
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+#about .highlight:nth-of-type(even) {
+    margin-right: 0;
+}
+
+#about .highlight strong {
+    color: var(--accent-color);
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+#about .highlight span {
+    color: var(--secondary-text);
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+#about .highlight:hover {
+    transform: translateY(-3px);
+    border-color: rgba(132, 204, 22, 0.4);
+    background: rgba(132, 204, 22, 0.04);
 }
 
 /* ===================================
@@ -176,6 +237,15 @@ nav {
 }
 
 .nav-links a:hover {
+    color: var(--secondary-text);
+}
+
+.nav-links a:active {
+    color: var(--primary-color);
+}
+
+/* Clicked navigation link */
+.nav-links a.clicked {
     color: var(--primary-color);
 }
 
@@ -232,7 +302,7 @@ nav {
 }
 
 /* ===================================
-   SUBTLE FLOWING WAVE
+   CI/CD CONTINUOUS FLOW
 =================================== */
 
 .hero {
@@ -240,40 +310,20 @@ nav {
     overflow: hidden;
 }
 
-.hero::before {
-    content: "";
+.hero-waves {
     position: absolute;
-
-    width: 760px;
-    height: 240px;
-
-    right: -220px;
-    bottom: 90px;
-
-    border: 1px solid rgba(132, 204, 22, 0.10);
-    border-radius: 50%;
-
-    transform: rotate(-12deg);
-
+    width: 560px;
+    height: 135px;
+    right: 650px;
+    bottom: 160px;
+    z-index: 1;
     pointer-events: none;
+    opacity: 0.9;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-
-    width: 680px;
-    height: 220px;
-
-    right: -180px;
-    bottom: 20px;
-
-    border: 1px solid rgba(132, 204, 22, 0.12);
-    border-radius: 50%;
-
-    transform: rotate(-12deg);
-
-    pointer-events: none;
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 @media (max-width: 768px) {
@@ -307,6 +357,87 @@ nav {
     }
 
 }
+
+/* ===================================
+   RESPONSIVE CI/CD INFINITY LOOP
+=================================== */
+
+@media (max-width: 768px) {
+
+    .hero-waves {
+        width: 360px;
+        height: 135px;
+
+        right: 10px;
+        top: 35;
+
+        transform: none;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .hero-waves {
+        width: 300px;
+        height: 135px;
+
+        right: 10px;
+        top: 40%;
+
+        transform: none;
+    }
+
+}
+
+
+/* ===================================
+ABOUT SECTION — RESPONSIVE
+=================================== */
+
+@media (max-width: 768px) {
+
+    #about {
+        padding: 50px 0;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    #about p {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    #about .about-intro {
+        font-size: 1.08rem;
+    }
+
+    #about .highlight {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 14px;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #about {
+        padding: 50px 0;
+    }
+
+    #about h2 {
+        font-size: 1.8rem;
+    }
+
+    #about .highlight {
+        padding: 18px;
+    }
+}
+
 .btn-secondary {
     min-width: 190px;
     text-align: center;
@@ -318,4 +449,754 @@ nav {
     background: transparent;
     color: var(--accent-color);
     transform: translateY(-3px);
+}
+
+/* Content links */
+.project-card a,
+.experience-card a,
+.certification-card a,
+.contact-links a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-card a:visited,
+.experience-card a:visited,
+.certification-card a:visited,
+.contact-links a:visited {
+    color: var(--secondary-text);
+}
+
+/* Hover stays gray */
+.project-card a:hover,
+.experience-card a:hover,
+.certification-card a:hover,
+.contact-links a:hover {
+    color: var(--secondary-text);
+}
+
+/* JavaScript clicked state */
+.project-card a.clicked,
+.experience-card a.clicked,
+.certification-card a.clicked,
+.contact-links a.clicked {
+    color: var(--primary-color);
+}
+
+/* Clicked + hover remains orange */
+.project-card a.clicked:hover,
+.experience-card a.clicked:hover,
+.certification-card a.clicked:hover,
+.contact-links a.clicked:hover {
+    color: var(--primary-color);
+}
+
+/* ===================================
+   TECH STACK
+=================================== */
+
+#tech-stack {
+    padding: 25px 0;
+}
+
+#tech-stack h2 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    color: var(--text-color);
+}
+
+#tech-stack h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 12px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+#tech-stack .section-intro {
+    max-width: 650px;
+    color: var(--secondary-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tech-card {
+    padding: 24px;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(132, 204, 22, 0.12);
+    border-radius: 14px;
+
+    transition: 0.3s ease;
+}
+
+.tech-card strong {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.tech-card span {
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.tech-card:hover {
+    border-color: rgba(132, 204, 22, 0.4);
+    transform: translateY(-4px);
+}
+
+/* ===================================
+   TECH STACK-RESPONSIVE
+=================================== */
+
+@media (max-width: 768px) {
+
+    #tech-stack {
+        padding: 50px 0;
+    }
+
+    #tech-stack h2 {
+        font-size: 2rem;
+    }
+
+    #tech-stack .section-intro {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .tech-card {
+        padding: 20px;
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #tech-stack {
+        padding: 50px 0;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===================================
+   PROJECTS
+=================================== */
+
+#projects {
+    padding: 25px 0;
+}
+
+#projects h2 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    color: var(--text-color);
+}
+
+#projects h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 12px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+#projects .section-intro {
+    max-width: 700px;
+    color: var(--secondary-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(132, 204, 22, 0.12);
+    border-radius: 16px;
+
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(132, 204, 22, 0.4);
+}
+
+.project-card h3 {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0 0 14px;
+}
+
+.project-card p {
+    color: var(--secondary-text);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.project-tags span {
+    padding: 6px 10px;
+    border-radius: 8px;
+
+    background: rgba(132, 204, 22, 0.08);
+    border: 1px solid rgba(132, 204, 22, 0.15);
+
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-card a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.project-card a + a {
+    margin-top: 12px;
+}
+
+/* ===================================
+   PROJECTS-RESPONSIVE
+=================================== */
+
+@media (max-width: 768px) {
+
+    #projects {
+        padding: 50px 0;
+    }
+
+    #projects h2 {
+        font-size: 2rem;
+    }
+
+    #projects .section-intro {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #projects {
+        padding: 50px 0;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1.15rem;
+    }
+}
+
+.project-card a::after {
+    content: " ↗";
+    color: var(--accent-color);
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+/* ===================================
+   EXPERIENCE & LEARNING
+=================================== */
+
+#experience {
+    padding: 25px 0;
+}
+
+#experience h2 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    color: var(--text-color);
+}
+
+#experience h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 12px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+#experience .section-intro {
+    max-width: 700px;
+    color: var(--secondary-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.experience-card {
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(132, 204, 22, 0.12);
+    border-radius: 16px;
+
+    transition: 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(132, 204, 22, 0.4);
+}
+
+.experience-card h3 {
+    margin: 0 0 8px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.experience-company {
+    margin: 0 0 8px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.experience-duration {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+.experience-card p {
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 900px;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 26px 0;
+}
+
+.experience-tags span {
+    padding: 6px 10px;
+    border-radius: 8px;
+
+    background: rgba(132, 204, 22, 0.08);
+    border: 1px solid rgba(132, 204, 22, 0.15);
+
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.experience-card a {
+    display: inline-block;
+    font-weight: 600;
+}
+
+.experience-card a::after {
+    content: " ↗";
+    color: var(--accent-color);
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+/* ===================================
+   EXPERIENCE & LEARNING-RESPONSIVE
+=================================== */
+
+@media (max-width: 768px) {
+
+    #experience {
+        padding: 50px 0;
+    }
+
+    #experience h2 {
+        font-size: 2rem;
+    }
+
+    #experience .section-intro {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .experience-card {
+        padding: 24px;
+    }
+
+    .experience-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .experience-card p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #experience {
+        padding: 50px 0;
+    }
+
+    .experience-card {
+        padding: 20px;
+    }
+
+    .experience-tags {
+        gap: 7px;
+    }
+}
+
+/* ===================================
+   CERTIFICATIONS
+=================================== */
+
+#certifications {
+    padding: 25px 0;
+}
+
+#certifications h2 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    color: var(--text-color);
+}
+
+#certifications h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 12px;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+#certifications .section-intro {
+    max-width: 700px;
+    color: var(--secondary-text);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.certification-card {
+    padding: 28px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(132, 204, 22, 0.12);
+    border-radius: 16px;
+
+    transition: 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(132, 204, 22, 0.4);
+}
+
+.certification-card h3 {
+    margin: 0 0 10px;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.certification-card p {
+    margin: 0 0 6px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.certification-card span {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+}
+
+.certification-card a {
+    display: inline-block;
+    font-weight: 600;
+}
+
+.certification-card a::after {
+    content: " ↗";
+    color: var(--accent-color);
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+/* ===================================
+   CERTIFICATIONS-RESPONSIVE
+=================================== */
+
+@media (max-width: 768px) {
+
+    #certifications {
+        padding: 50px 0;
+    }
+
+    #certifications h2 {
+        font-size: 2rem;
+    }
+
+    #certifications .section-intro {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .certification-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .certification-card {
+        padding: 24px;
+    }
+
+    .certification-card h3 {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #certifications {
+        padding: 50px 0;
+    }
+
+    .certification-card {
+        padding: 20px;
+    }
+}
+/* ===================================
+   LET'S CONNECT
+=================================== */
+
+#contact {
+    padding: 25px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+    color: var(--text-color);
+}
+
+#contact h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin: 12px auto 0;
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+#contact .section-intro {
+    max-width: 680px;
+    margin: 0 auto 38px;
+    color: var(--secondary-text);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.contact-links a {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid rgba(132, 204, 22, 0.18);
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.contact-links a::after {
+    content: " ↗";
+    color: var(--accent-color);
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+.contact-links a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(132, 204, 22, 0.4);
+}
+
+/* ===================================
+   LET'S CONNECT-RESPONSIVE
+=================================== */
+
+@media (max-width: 768px) {
+
+    #contact {
+        padding: 50px 0;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    #contact .section-intro {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    .contact-links {
+        gap: 14px;
+    }
+
+    .contact-links a {
+        padding: 11px 16px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #contact {
+        padding: 50px 0;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-links a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer {
+    padding: 45px 0 30px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+footer p {
+    margin: 8px 0;
+    color: var(--secondary-text);
+    font-size: 0.95rem;
+}
+
+footer p:first-child {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.footer-name {
+    color: var(--text-color);
+}
+
+.footer-dot {
+    color: var(--primary-color);
+}
+
+.footer-copy {
+    margin-top: 20px !important;
+    font-size: 0.85rem !important;
+    color: rgba(203, 213, 225, 0.7) !important;
+}
+
+/* ===================================
+   FOOTER-RESPONSIVE
+=================================== */
+
+@media (max-width: 400px) {
+
+    footer {
+        padding: 40px 0 25px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    .footer-copy {
+        font-size: 0.78rem !important;
+        line-height: 1.6;
+    }
 }

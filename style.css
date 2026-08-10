@@ -329,15 +329,15 @@ nav {
 @media (max-width: 768px) {
 
     .nav-container {
-        width: 92%;
+        width: 94%;
     }
 
     .nav-links {
-        gap: 7px;
+        gap: 6px;
     }
 
     .nav-links a {
-        font-size: 0.76rem;
+        font-size: 0.72rem;
     }
 
 }
@@ -356,6 +356,34 @@ nav {
         font-size: 0.74rem;
     }
 
+}
+
+@media (max-width: 350px) {
+    .logo {
+        font-size: 1.45rem;
+    }
+
+    .nav-links {
+        gap: 3px;
+    }
+
+    .nav-links a {
+        font-size: 0.68rem;
+    }
+}
+
+@media (max-width: 315px) {
+    .nav-container {
+        width: 97%;
+    }
+
+    .nav-links {
+        gap: 2px;
+    }
+
+    .nav-links a {
+        font-size: 0.66rem;
+    }
 }
 
 /* ===================================

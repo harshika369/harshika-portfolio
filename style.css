@@ -302,7 +302,7 @@ nav {
 }
 
 /* ===================================
-   CI/CD CONTINUOUS FLOW
+   HERO WAVES FLOW
 =================================== */
 
 .hero {
@@ -312,13 +312,14 @@ nav {
 
 .hero-waves {
     position: absolute;
-    width: 560px;
-    height: 135px;
-    right: 650px;
-    bottom: 160px;
+    width: 100%;
+    height: 390px;
+    left: 0;
+    top: 50px;
+    transform: translateY(2%);
     z-index: 1;
     pointer-events: none;
-    opacity: 0.9;
+    opacity: 0.6;
 }
 
 .hero-content {
@@ -387,37 +388,19 @@ nav {
 }
 
 /* ===================================
-   RESPONSIVE CI/CD INFINITY LOOP
+   HERO WAVES FLOW-RESPONSIVE
 =================================== */
 
 @media (max-width: 768px) {
-
     .hero-waves {
-        width: 360px;
-        height: 135px;
-
-        right: 10px;
-        top: 35;
-
-        transform: none;
+        width: 170%;
+        height: 360px;
+        left: -35%;
+        top: 1%;
+        transform: translateY(2%);
+        opacity: 0.9;
     }
-
 }
-
-@media (max-width: 400px) {
-
-    .hero-waves {
-        width: 300px;
-        height: 135px;
-
-        right: 10px;
-        top: 40%;
-
-        transform: none;
-    }
-
-}
-
 
 /* ===================================
 ABOUT SECTION — RESPONSIVE
